@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 
 import { ImageViewComponent } from '../components/image-view/image-view.component';
 
-class ImageRezieView implements NodeView {
+class ImageResizeView implements NodeView {
   dom: HTMLElement;
   view: EditorView;
   getPos: () => number;
@@ -113,7 +113,7 @@ const imageResizePlugin = (injector: Injector): Plugin => {
     props: {
       nodeViews: {
         image: (node: ProseMirrorNode, view: EditorView, getPos: () => number) => {
-          return new ImageRezieView(node, view, getPos, injector);
+          return new ImageResizeView(node, view, getPos, injector);
         },
       },
     },
